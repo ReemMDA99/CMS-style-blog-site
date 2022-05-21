@@ -26,6 +26,20 @@ Licensed under the MIT
 - Heroku
 - JawsDB
 
+## Npm packages installed
+
+- npm init
+- npm install mysql2: to create database 
+- npm install sequelize: to connect to a MySQL database for your Models
+- npm install express: to create API for your Controllers.
+- npm install express-handlebars: to use Handlebars.js for your Views
+- npm install jest: to test the application
+- npm install dotenv: to use environment variables
+- npm install bcrypt: to hash passwords
+- npm install express-session : The express-session (Links to an external site.) package stores the session data on the client in a cookie. When you are idle on the site for more than a set time, the cookie will expire and you will be required to log in again to start a new session.
+- npm install connect-session-sequelize: to add authentication.
+
+
 ## User Story
 
 AS A developer who writes about tech
