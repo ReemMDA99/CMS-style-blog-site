@@ -17,23 +17,24 @@ Post.init(
           allowNull: false
         },
         post_content: {
-          type: DataTypes.Text,
-          allowNull: false,
-          validate: {
-            // post must be at least one character long
-            len : [1]
-          }
+            type: DataTypes.Text,
+            allowNull: false,
+            validate: {
+                // post must be at least one character long
+                len : [1]
+            }
         },
         user_id: {
-          type: DataTypes.INTEGER,
-          references: {
-            model: 'user',
-            key: 'id'
-          }
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
         }
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'post'

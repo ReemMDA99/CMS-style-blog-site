@@ -6,7 +6,7 @@ class Comment extends Model {}
 
 // create table column and config
 Comment.init(
-{
+  {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -21,7 +21,7 @@ Comment.init(
         len: [1]
       }
     },
-    
+
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -37,18 +37,13 @@ Comment.init(
         key: 'id'
       }
     },
-
-    dateCreated: {
-        type: DataTypes.DATEONLY,
-        allowNull: false,
-        defaultValue: DataTypes.NOW,
-    },
-},
-{
+  },
+  {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'comment'
-});
+  });
 
 module.exports = Comment;
