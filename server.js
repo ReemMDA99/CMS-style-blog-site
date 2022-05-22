@@ -1,12 +1,18 @@
+// Import all dependencies
 const path = require('path');
 const express = require('express');
+// Express session to use session cookies
 const session = require('express-session');
 const exphbs = require('express-handlebars');
+const routes = require('./controllers');
 
+// Initialize
 const app = express();
+// Use the port for the server on 3002
 const PORT = process.env.PORT || 3002;
 
 const sequelize = require('./config/connection');
+// Sequelize store to save the session so the user can remain logged in
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
@@ -32,7 +38,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(require('./controllers/'));
+app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));

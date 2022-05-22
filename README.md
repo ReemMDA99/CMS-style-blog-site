@@ -38,6 +38,7 @@ Licensed under the MIT
 - npm install bcrypt: to hash passwords
 - npm install express-session : The express-session (Links to an external site.) package stores the session data on the client in a cookie. When you are idle on the site for more than a set time, the cookie will expire and you will be required to log in again to start a new session.
 - npm install connect-session-sequelize: to add authentication.
+- npm install --save-dev nodemon: nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
 
 
 ## User Story
