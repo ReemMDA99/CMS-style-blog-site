@@ -69,14 +69,15 @@ router.post('/', (req, res)=> {
             password: req.body.password
         }
     });
-        req.session.save(() => {
+    req.session.save(() => {
         // declare session variables
             req.session.user_id = dbUserData.id;
             req.session.username = dbUserData.username;
             req.session.loggedIn = true;
   
             res.json(newUser);
-        }).catch (err) {
-            res.status(500).json(err);
-        }
+    }).catch (err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
 });
