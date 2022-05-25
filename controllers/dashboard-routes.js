@@ -10,11 +10,11 @@ router.get('/', withAuth, (req, res) => {
             // use the ID from the session
             user_id: req.session.user_id
         },
-        attributes: ['id','title','created_at','post_content'],
+        attributes: ['id','title','post_content'],
         include: [
         {
             model: Comment,
-            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+            attributes: ['id', 'comment_text', 'post_id', 'user_id'],
             include: {
                 model: User,
                 attributes: ['username']
@@ -41,11 +41,11 @@ router.get('/edit/:id', withAuth, (req, res) => {
         where: {
             id: req.params.id
         },
-        attributes: ['id','title','created_at','post_content'],
+        attributes: ['id','title','post_content'],
         include: [
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                attributes: ['id', 'comment_text', 'post_id', 'user_id'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -82,11 +82,11 @@ router.get('/create/', withAuth, (req, res) => {
             // use the ID from the session
             user_id: req.session.user_id
         },
-        attributes: ['id','title','created_at','post_content'],
+        attributes: ['id','title','post_content'],
         include: [
         {
             model: Comment,
-            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+            attributes: ['id', 'comment_text', 'post_id', 'user_id'],
             include: {
                 model: User,
                 attributes: ['username']

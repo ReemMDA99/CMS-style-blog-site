@@ -9,13 +9,13 @@ const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
   Post.findAll({
-    attributes: ['id','post_content','title','created_at'],
+    attributes: ['id','post_content','title'],
      // Order the posts from most recent to least
-    order: [[ 'created_at', 'DESC']],
+    // order: [[ 'created_at', 'DESC']],
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        attributes: ['id', 'comment_text', 'post_id', 'user_id'],
         include: {
           model: User,
           attributes: ['username']
@@ -39,7 +39,8 @@ router.post('/', withAuth, (req, res) => {
     Post.create({
       title: req.body.title,
       post_content: req.body.post_content,
-      user_id: req.session.user_id
+      user_id: req.session.user_id,
+      // created_at: req.body.created_at
 
     }).then(dbPostData => res.json(dbPostData)
     ).catch(err => {

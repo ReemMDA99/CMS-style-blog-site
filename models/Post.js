@@ -30,7 +30,7 @@ Post.init(
                 model: 'user',
                 key: 'id'
             }
-        },
+        }
         // created_at: {
         //     type: DataTypes.DATEONLY,
         //     allowNull: false,
@@ -39,7 +39,6 @@ Post.init(
     },
     {
         sequelize,
-        
         freezeTableName: true,
         underscored: true,
         modelName: 'post'

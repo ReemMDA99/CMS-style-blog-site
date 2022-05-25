@@ -36,7 +36,7 @@ Comment.init(
         model: 'post',
         key: 'id'
       }
-    },
+    }
     // created_at: {
     //   type: DataTypes.DATEONLY,
     //   allowNull: false,
