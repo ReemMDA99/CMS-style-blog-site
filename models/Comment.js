@@ -37,10 +37,15 @@ Comment.init(
         key: 'id'
       }
     },
+    // created_at: {
+    //   type: DataTypes.DATEONLY,
+    //   allowNull: false,
+    //   defaultValue: DataTypes.NOW,
+    // }
   },
   {
     sequelize,
-    timestamps: false,
+    // timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'comment'
