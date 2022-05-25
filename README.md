@@ -26,6 +26,8 @@ Licensed under the MIT
 - handlebars.js
 - Heroku
 - JawsDB
+- jest
+- Insomnia
 
 ## Npm packages installed
 

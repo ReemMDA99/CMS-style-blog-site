@@ -1,7 +1,7 @@
 const router = require('express').Router();
 // does not require post and comment
 const { User } = require('../../models');
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 
 
 // get all users

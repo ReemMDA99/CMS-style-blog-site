@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
+//const sequelize = require('../../config/connection');
 const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
@@ -8,14 +8,15 @@ const withAuth = require('../../utils/auth');
 // get all users
 
 router.get('/', (req, res) => {
+  console.log("======================");
   Post.findAll({
-    attributes: ['id','post_content','title'],
+    attributes: ['id','post_content','title','created_at'],
      // Order the posts from most recent to least
     // order: [[ 'created_at', 'DESC']],
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id'],
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
         include: {
           model: User,
           attributes: ['username']
@@ -39,7 +40,7 @@ router.post('/', withAuth, (req, res) => {
     Post.create({
       title: req.body.title,
       post_content: req.body.post_content,
-      user_id: req.session.user_id,
+      user_id: req.session.user_id
       // created_at: req.body.created_at
 
     }).then(dbPostData => res.json(dbPostData)
