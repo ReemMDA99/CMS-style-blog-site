@@ -1,0 +1,21 @@
+<div class="mb-6">
+    <a href="/dashboard/create/"><button id="create-post" class="button is-primary is-pulled-right">create post</button></a>
+    <h2 class="title pb-4">Dashboard</h2>
+    <br>
+
+{{#if posts.length}}
+<section>
+    <h2 class="d-flex justify-content-center">Your Posts</h2>
+    <ol class="d-flex flex-wrap">
+        {{#each posts as |post|}}
+        <li>
+            {{> post-info post}}
+            <a href="/dashboard/edit/{{post.id}}"><button class="button mb-5 ml-5 is-warning">Edit post</button></a>
+        </li>
+        {{/each}}
+    </ol>
+</section>
+
+{{/if}}
+
+<script src="/javascript/add-post.js"></script>
