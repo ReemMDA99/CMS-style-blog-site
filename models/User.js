@@ -20,7 +20,7 @@ User.init(
         autoIncrement: true
     },
     username: {
-        ype: DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     email: {

@@ -9,7 +9,7 @@ const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
   Post.findAll({
-    attributes: ['id','post_url','title','created_at'],
+    attributes: ['id','post_content','title','created_at'],
      // Order the posts from most recent to least
     order: [[ 'created_at', 'DESC']],
     include: [

@@ -17,8 +17,8 @@ Post.init(
           allowNull: false
         },
         post_content: {
-            type: DataTypes.Text,
-            allowNull: false,
+            type: DataTypes.TEXT,
+            allowNull: true,
             validate: {
                 // post must be at least one character long
                 len : [1]
