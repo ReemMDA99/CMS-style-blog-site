@@ -11,7 +11,8 @@ Licensed under the MIT
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Screenshots
-
+![image](./assets/Picture1.png)
+![image](./assets/Picture2.png)
 
 ## Technologies Used
 
@@ -87,6 +88,6 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 
 
 ## Submission
-- The URL of the functional, deployed application on Heroku:
+- The URL of the functional, deployed application on Heroku: http://tech-blog-by-reem.herokuapp.com/
 
 - The URL of the GitHub repository: https://github.com/ReemMDA99/CMS-style-blog-site
