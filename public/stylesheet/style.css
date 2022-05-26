@@ -37,7 +37,10 @@ input {
     cursor: pointer;
     border-radius: 8px;
 }
-
+.btn-primary {
+    color: #fff;
+    background-color: #c11425;
+}
 .wrapper {
     width: 100%;
     /* min-height: 100%;

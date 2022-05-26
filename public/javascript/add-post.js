@@ -33,7 +33,7 @@ evt.preventDefault();
 const title = document.querySelector('input[name="post-title"]').value;
 const content = document.querySelector('input[name="post-content"]').value;
 
-  fetch(`/api/posts`, {
+fetch(`/api/posts`, {
     method: "POST",
     body: JSON.stringify({
       title,
@@ -42,9 +42,9 @@ const content = document.querySelector('input[name="post-content"]').value;
     headers: {
       "Content-Type": "application/json",
     },
-    }).then((response) => {
-    alert(response);
+    }).then(() => {
+      document.location.replace("/dashboard");
   });
 
-  alert("form submitted");
+ // alert("form submitted");
 });
