@@ -3,21 +3,24 @@
 }
 body, html {
     height: 100%;
-    padding: 5%;
+    padding: 2%;
     margin: 0;
+    /* display: flex;
+    flex-direction: column; */
     font-family:'Times New Roman', Times, serif;
-    color: rgb(156, 38, 38);
-    background-color: rgb(227, 227, 227);
-    border: 2px solid;
+    color: rgb(138, 0, 0);
+    background-color: rgb(225, 225, 225);
+    /* border: 2px solid; */
 }
 a {
     text-decoration: none;
     font-weight: bold;
-    color: rgb(255, 255, 255);
+    font-size: larger;
+    color: rgb(0, 0, 0);
 }
   
 a:hover {
-    color: #bab9b9;
+    color: #343434;
 }
 input {
     padding:1%;
@@ -37,20 +40,20 @@ input {
 
 .wrapper {
     width: 100%;
-    min-height: 100%;
-    max-width: 1200px;
+    /* min-height: 100%;
+    max-width: 1200px; */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
 header {
-    border-bottom: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 1%;
     color: rgb(255, 255, 255);
-    background-color: #960000d5;
+    background-color: #bb1a1ad5;
 }
 nav {
     padding: 1.4rem;
@@ -59,27 +62,35 @@ nav {
 }
 main {
     flex: 1;
+    display: flex;
+    flex-direction: column;
     padding: 2% 4%;
     justify-content: space-between;
 }
 .card-body {
     padding: 1%;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-label,
 .form-input,
 .form-textarea {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .comment-form {
-    
+    display: flex;
+    flex-direction: column;
     margin-bottom: 5%;
 }
   
 .comment {
     padding: 1%;
     margin-bottom: 1%;
+    display: flex;
+    flex-direction: column;
 }
   
 .comment:nth-child(odd) {
@@ -111,24 +122,38 @@ main {
 .post {
     margin-bottom: 2%;
     line-height: 150%;
+    display: flex;
+    flex-direction: column;
 }
   
 .post .title span {
     font-style: italic;
-    font-size: 90%;
-    color: #060000;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: medium;
+    color: #4c0000;
 }
-  
+span {
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: medium;
+    color: #4c0000;
+}
 .edit-link {
     display: block;
     margin: -1.5% 0 2% 0;
 }
-.footer{
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
+p {
+    margin-top: 0;
+    font-family: cursive;
+    font-size: medium;
+    margin-bottom: 0.5rem;
+}
+footer{
     align-items: center;
-    padding: 0 1%;
-    color: rgb(255, 255, 255);
     background-color: #960000d5;
+    color: #fff5eb;
+    text-align: center;
+    font-size: larger;
+    font-weight: 200;
+    padding: auto;
 }
