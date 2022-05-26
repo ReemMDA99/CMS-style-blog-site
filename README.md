@@ -13,6 +13,7 @@ Licensed under the MIT
 ## Screenshots
 ![image](./assets/Picture1.png)
 ![image](./assets/Picture2.png)
+![image](./assets/Picture3.png)
 
 ## Technologies Used
 
