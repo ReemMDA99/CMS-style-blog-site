@@ -91,6 +91,6 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 
 
 ## Submission
-- The URL of the functional, deployed application on Heroku: http://tech-blog-by-reem.herokuapp.com/
+- The URL of the functional, deployed application on Heroku: https://cms-style-tech-blog-reem.herokuapp.com/login
 
 - The URL of the GitHub repository: https://github.com/ReemMDA99/CMS-style-blog-site
