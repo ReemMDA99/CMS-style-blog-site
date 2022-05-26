@@ -9,7 +9,7 @@
         </div>
         <div>
             <label for="post-content">post content:</label>
-            <input name="post-content" type="text" value="{{post.post_content}}" />
+            <input name="post-content" type="text" value="{{post.content}}" />
         </div>
         <div> Posted by you on {{format_date post.created_at}}
 		  <a href="/post/{{post.id}}">{{post.comments.length}}

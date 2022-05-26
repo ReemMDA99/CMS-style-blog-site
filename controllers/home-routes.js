@@ -1,16 +1,16 @@
 const router = require('express').Router();
-const req = require('express/lib/request');
-const res = require('express/lib/response');
+// const req = require('express/lib/request');
+// const res = require('express/lib/response');
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
-const withAuth = require('../utils/auth');
+// const withAuth = require('../utils/auth');
 
 // get all posts for homepage
 router.get('/', (req, res) => {
     console.log(req.session);
 
     Post.findAll({
-        attributes: ['id', 'title', 'post_content', 'created_at'],
+        attributes: ['id', 'title', 'content', 'created_at'],
         include: [
             {
             model: User,
@@ -44,7 +44,7 @@ router.get('/post/:id', (req, res) => {
       where: {
         id: req.params.id
       },
-      attributes: ['id','title','created_at','post_content'],
+      attributes: ['id','title','created_at','content'],
       include: [
         {
           model: Comment,
@@ -94,6 +94,15 @@ router.get('/signup', (req, res) => {
     }
   
     res.render('signup');
+});
+
+router.get("/new_post", (req, res) => {
+	if (!req.session.loggedIn) {
+		res.redirect("/");
+		return;
+	}
+
+	res.render("newpost");
 });
 
 module.exports = router;

@@ -1,18 +1,16 @@
 const router = require('express').Router();
-//const sequelize = require('../../config/connection');
+const sequelize = require('../../config/connection');
 const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
-
-
 
 // get all users
 
 router.get('/', (req, res) => {
   console.log("======================");
   Post.findAll({
-    attributes: ['id','post_content','title','created_at'],
+    attributes: ['id','content','title','created_at'],
      // Order the posts from most recent to least
-    // order: [[ 'created_at', 'DESC']],
+    order: [[ 'created_at', 'DESC']],
     include: [
       {
         model: Comment,
@@ -34,12 +32,45 @@ router.get('/', (req, res) => {
     });
 });
 
+// get post by id
+
+router.get('/:id', (req, res) => {
+  Post.findOne({
+    where: {
+      id:req.params.id,
+    },
+    attributes: ['id', 'title', 'content', 'created_at'],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'post_id','user_id', 'created_at'],
+        include: { 
+          model: User,
+          attributes: ['username'],
+        },
+      },
+      {
+        model: User,
+        attributes:['username'],
+      },
+    ],
+  }).then((dbPostData)=> {
+    if(!dbPostData) {
+      res.status(404).json({message: 'There is no post with this id'});
+      return;
+    }
+    res.json(dbPostData);
+  }).catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
 // create new post
 
 router.post('/', withAuth, (req, res) => {
     Post.create({
       title: req.body.title,
-      post_content: req.body.post_content,
+      content: req.body.content,
       user_id: req.session.user_id
       // created_at: req.body.created_at
 
@@ -55,7 +86,7 @@ router.post('/', withAuth, (req, res) => {
 router.put('/:id', withAuth, (req, res) => {
     Post.update({
         title: req.body.title,
-        post_content: req.body.post_content
+       // content: req.body.content
     },
     {
         where: {
@@ -75,6 +106,7 @@ router.put('/:id', withAuth, (req, res) => {
 
 // delete post by id
 router.delete('/:id', withAuth, (req, res) => {
+  console.log("id", req.params.id);
     Post.destroy({
       where: {
         id: req.params.id
