@@ -9,12 +9,12 @@ async function signupFormHandler(event) {
         const response = await fetch('/api/users', {
             method: 'post',
             body: JSON.stringify({
-                username,
-                email,
-                password
-            }),
-            headers: { 'Content-Type': 'application/json' }
-        });
+            username,
+            email,
+            password,
+        }),
+        headers: { 'Content-Type': 'application/json' }
+    });
   
       if (response.ok) {
         document.location.replace('/dashboard');
