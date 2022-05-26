@@ -8,6 +8,7 @@ body, html {
     font-family:'Times New Roman', Times, serif;
     color: rgb(156, 38, 38);
     background-color: rgb(227, 227, 227);
+    border: 2px solid;
 }
 a {
     text-decoration: none;
@@ -100,7 +101,6 @@ main {
 
 .delete-post-btn {
     background-color: #960000d5;
-};
 }
   
 .delete-post-btn:hover {
@@ -121,4 +121,13 @@ main {
 .edit-link {
     display: block;
     margin: -1.5% 0 2% 0;
+}
+.footer{
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1%;
+    color: rgb(255, 255, 255);
+    background-color: #960000d5;
 }
