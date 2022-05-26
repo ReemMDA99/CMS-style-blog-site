@@ -82,7 +82,7 @@ router.get('/login', (req, res) => {
       return;
 
     }
-  
+
     res.render('login');
 });
 
@@ -101,8 +101,7 @@ router.get("/new_post", (req, res) => {
 		res.redirect("/");
 		return;
 	}
-
-	res.render("newpost");
+	res.render("create-post");
 });
 
 module.exports = router;
